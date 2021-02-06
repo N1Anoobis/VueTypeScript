@@ -63,6 +63,11 @@
               <span>Read more...</span>
             </a>
           </div>
+           <ArticlePreview
+            v-for="article in feed"
+            :article="article"
+            :key="article.slug"
+          ></ArticlePreview>
         </div>
 
         <div class="col-md-3">
@@ -85,3 +90,21 @@
     </div>
   </div>
 </template>
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+import ArticlePreview from '@/components/article/ArticlePreview.vue';
+import articles from '@/store/modules/articles';
+@Component({
+  components: {
+    ArticlePreview,
+  },
+})
+export default class Home extends Vue {
+  get feed() {
+    return articles.feed;
+  }
+  async created() {
+    await articles.refreshFeed('global');
+  }
+}
+</script>>

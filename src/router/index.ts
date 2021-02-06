@@ -10,16 +10,16 @@ const routes: RouteConfig[] = [
     name: 'Home',
     component: Home,
   },
-    {
-    path: '/login',
-    name: 'Login',
-    component: () => import('@/views/Login.vue')
-  },
-  //    {
-  //   path: '/article',
-  //   name: 'article',
-  //   component: () => import('@/views/Article.vue')
+  //   {
+  //   path: '/login',
+  //   name: 'Login',
+  //   component: () => import('@/views/Login.vue')
   // },
+     {
+    path: '/article',
+    name: 'article',
+    component: () => import('@/views/Article.vue')
+  },
   //     {
   //   path: '/editor',
   //   name: 'editor',
@@ -30,11 +30,11 @@ const routes: RouteConfig[] = [
   //   name: 'profile',
   //   component: () => import('@/views/Profile.vue')
   // },
-              {
-    path: '/register',
-    name: 'register',
-    component: () => import('../views/Register.vue')
-  },    
+  //             {
+  //   path: '/register',
+  //   name: 'register',
+  //   component: () => import('../views/Register.vue')
+  // },    
                       {
     path: '/settings',
     name: 'settings',
